@@ -1,0 +1,33 @@
+$toastGap: 24px;
+$maxZIndex: 9999;
+
+.toast-wrapper {
+  width: 0;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: $toastGap;
+  right: $toastGap;
+  z-index: $maxZIndex;
+
+  .toast:nth-last-child(n + 4) {
+    opacity: 0;
+  }
+
+  &:hover .toast {
+    transform: translate3d(0, calc(var(--offset-height) - $toastGap * var(--index)), 0) scale(1) !important;
+  }
+
+  &:hover .toast::after {
+    $fullHeight: $toastGap;
+    content: "";
+    width: 100%;
+    height: $fullHeight;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+}
