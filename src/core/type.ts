@@ -1,6 +1,6 @@
 import React from "react";
 
-export type ToastType = 'success' | 'error';
+export type ToastType = 'success' | 'error' | 'info';
 export enum ToastStatus {
   Enter,
   Leave,

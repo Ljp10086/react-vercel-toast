@@ -10,10 +10,15 @@ const App = () => {
       <input ref={ref} type="text" />
       <button onClick={() => toast.success(<>
         <span>{ref.current?.value}</span>
-        {/* <button>点我啊笨蛋</button> */}
-      </>)}>Add</button>
-      <button onClick={() => {
-      }}>dispatch</button>
+      </>)}>Add success</button>
+
+      <button onClick={() => toast.error(<>
+        <span>{ref.current?.value}</span>
+      </>)}>Add error</button>
+
+      <button onClick={() => toast(<>
+        <span>{ref.current?.value}</span>
+      </>)}>Add info</button>
       <ToastWrapper />
     </div>
   );
